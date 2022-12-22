@@ -63,7 +63,6 @@ def loadPersonnes():
     lines = ModuleCSV.getLines()
     for line in lines:
         if len(line)>3:
-            print(line[0])
             ajouterPersonne(creerPersonne(line[0],line[1],line[2],line[3]))
 
 try :
@@ -106,6 +105,7 @@ while(exitedMenu == False):
         print("| Ajout d'une nouvelle personne |")
         nom = prenom = age = ville = ""
 
+        # Si un des champs est non renseigné
         while (nom == "" or prenom == "" or age == "" or ville ==""):
 
             # Formulaire ajout d'une nouvelle personne
@@ -135,6 +135,7 @@ while(exitedMenu == False):
         # Champs sélection d'une personne
         selectedPersonne = str(input("Entrez le nom de famille de personne : "))
         nom = prenom = age = ville = ""
+        # Si un des champs est non renseigné
         while (nom == "" or prenom == "" or age == "" or ville ==""):
             # Formulaire modification de la personne
             nom = input("Nouveau nom : ") 
@@ -152,7 +153,7 @@ while(exitedMenu == False):
                     clear()
                     print("Aucune personne de ce nom trouvé")
             else:
-                print("Aucun champs ne doit être vide.")
+                print("Pas de modification, aucun champs ne doit être vide.")
 
     # Choix suppression d'une personne
     elif(selectedOption == "4"):
