@@ -5,6 +5,7 @@ fileName = "personnes.csv"
 def getFileName():
     return fileName
 
+# Function retourne toutes les lignes dans un tableau
 def getLines():
     lines = []
     with open(fileName, newline='') as csvfile:
@@ -13,6 +14,8 @@ def getLines():
             
             lines.append(row)
     return lines
+
+# Function mise à jour du CSV
 
 def newLines(personnes):
 
